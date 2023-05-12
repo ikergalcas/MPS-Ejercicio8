@@ -58,15 +58,6 @@ public class AvlTreeTest {
     assertEquals("testCompareNodes", 0, avlTree.compareNodes(node2, node3));
   }
 
-  /*
-  @Test
-  public void testInsertingTheFirstElement() throws Exception {
-    AvlNode<Integer> node = new AvlNode<Integer>(6) ;
-    avlTree_.insertAvlNode(node);
-    assertEquals("testInsertingTheFirstElement", node, avlTree_.getTop());
-  }
-  */
-
   @Test
   public void testInsertingRightAndLeftElementsJustAfterTop() throws Exception {
     AvlNode<Integer> node = new AvlNode<Integer>(6);
@@ -107,6 +98,16 @@ public class AvlTreeTest {
     assertEquals("testInsertingLeftElement", nodeLeft, node.getLeft());
 
     String tree = " | 6 | 4";
+    assertEquals("testInsertingLeftElement", tree, avlTree.toString());
+  }
+
+  @Test
+  public void testInsertingLeftElementUsingInsert() throws Exception {
+
+    avlTree.insert(3);
+    avlTree.insert(2);
+
+    String tree = " | 3 | 2";
     assertEquals("testInsertingLeftElement", tree, avlTree.toString());
   }
 
