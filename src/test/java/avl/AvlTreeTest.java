@@ -111,6 +111,16 @@ public class AvlTreeTest {
   }
 
   @Test
+  public void testInsertingLeftElementUsingInsert() throws Exception {
+
+    avlTree.insert(3);
+    avlTree.insert(2);
+
+    String tree = " | 3 | 2";
+    assertEquals("testInsertingLeftElement", tree, avlTree.toString());
+  }
+
+  @Test
   public void testSearchClosestNode() throws Exception {
     int result;
     AvlNode<Integer> node = new AvlNode<Integer>(7);
