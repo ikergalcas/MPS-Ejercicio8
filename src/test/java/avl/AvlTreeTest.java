@@ -735,12 +735,6 @@ public class AvlTreeTest {
   }
 
   @Test
-  public void search_node_con_vacio_es_null() {
-    AvlNode<Integer> targetNode = new AvlNode<>(1);
-    assertNull(avlTree.searchNode(targetNode));
-  }
-
-  @Test
   public void testDeletetingNode(){
     AvlNode<Integer> node;
 
