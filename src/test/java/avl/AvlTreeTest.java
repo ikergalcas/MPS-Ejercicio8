@@ -9,6 +9,7 @@ import java.util.Comparator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.w3c.dom.Node;
 
 /**
  * Created with IntelliJ IDEA. User: Antonio J. Nebro Date: 08/07/13
@@ -109,6 +110,17 @@ public class AvlTreeTest {
 
     String tree = " | 3 | 2";
     assertEquals("testInsertingLeftElement", tree, avlTree.toString());
+  }
+
+  //New test
+  @Test
+  public void testInsertingIdenticalNodes() throws Exception {
+    Comparator<?> comp = Comparator.comparingInt((Integer o) -> o);
+    AvlTree<Integer> tree = new AvlTree<>(comp);
+    tree.insertTop(new AvlNode<>(2));
+    tree.insertAvlNode(new AvlNode<>(2));
+    String expected = " | 2";
+    assertEquals("testInsertingIdenticalNodes", expected, tree.toString());
   }
 
   @Test
@@ -462,6 +474,7 @@ public class AvlTreeTest {
     assertEquals("testSearchNode", tree, avlTree.toString());
   }
 
+  //MODIFICADO PARA TENER 100% DE COBERTURA
   @Test
   public void testFindSuccessor() throws Exception {
     AvlNode<Integer> node;
@@ -490,12 +503,24 @@ public class AvlTreeTest {
     node = new AvlNode<Integer>(14);
     avlTree.insertAvlNode(node);
 
+
     node = avlTree.search(8);
     assertEquals("testFindSuccessor", avlTree.search(10), avlTree.findSuccessor(node));
     node = avlTree.search(10);
     assertEquals("testFindSuccessor", avlTree.search(12), avlTree.findSuccessor(node));
     node = avlTree.search(14);
     assertEquals("testFindSuccessor", avlTree.search(20), avlTree.findSuccessor(node));
+    node = avlTree.search(20);
+    assertEquals("testFindSuccessor", avlTree.search(22), avlTree.findSuccessor(node));
+    node = avlTree.search(22);
+    assertEquals("testFindSuccessor", avlTree.search(24), avlTree.findSuccessor(node));
+    node = avlTree.search(4);
+    assertEquals("testFindSuccessor", avlTree.search(8), avlTree.findSuccessor(node));
+    node = avlTree.search(24);
+    assertEquals("testFindSuccessor", null, avlTree.findSuccessor(node));
+    node = avlTree.search(12);
+    assertEquals("testFindSuccessor", avlTree.search(14), avlTree.findSuccessor(node));
+
 
     String tree = " | 20 | 8 | 4 | 12 | 10 | 14 | 22 | 24";
     assertEquals("testSearchNode", tree, avlTree.toString());
