@@ -31,6 +31,15 @@ public class AvlTreeTest {
     comparator = null;
   }
 
+  /**
+   * Test para searchNode(avlNode)
+   */
+  @Test
+  public void search_node_con_vacio_es_null() {
+    AvlNode<Integer> targetNode = new AvlNode<>(1);
+    assertNull(avlTree.searchNode(targetNode));
+  }
+
   @Test
   public void testAvlIsEmpty() throws Exception {
     assertTrue("TestAvlIsEmpty", avlTree.avlIsEmpty());
