@@ -724,4 +724,67 @@ public class AvlTreeTest {
     avlTree.delete(20);
     assertEquals("testDeletingTopNode", " | 12 | 8 | 4 | 10 | 22 | 14 | 24", avlTree.toString());
   }
+
+  @Test
+  public void search_node_con_vacio_es_null() {
+    AvlNode<Integer> targetNode = new AvlNode<>(1);
+    assertNull(avlTree.searchNode(targetNode));
+  }
+
+  @Test
+  public void testDeletetingNode(){
+    AvlNode<Integer> node;
+
+    node = new AvlNode<Integer>(14);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(9);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(30);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(7);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(11);
+    avlTree.insertAvlNode(node);
+    node = new AvlNode<Integer>(25);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(38);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(6);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(8);
+    avlTree.insertAvlNode(node);
+    node = new AvlNode<Integer>(10);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(13);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(22);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(27);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(35);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(40);
+    avlTree.insertAvlNode(node);
+
+
+    node = new AvlNode<Integer>(12);
+    avlTree.insertAvlNode(node);
+
+    node = new AvlNode<Integer>(21);
+    avlTree.insertAvlNode(node);
+
+    avlTree.delete(42);
+  }
 }
